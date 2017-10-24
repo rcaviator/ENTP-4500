@@ -15,6 +15,9 @@ class GameManager
     //singleton instance
     static GameManager instance;
 
+    //start controll
+    bool firstRun = true;
+
     #endregion
 
     #region Constructor
@@ -56,7 +59,17 @@ class GameManager
 
     #region Public Methods
 
-    
+    /// <summary>
+    /// Starts the app
+    /// </summary>
+    public void StartApp()
+    {
+        if (firstRun)
+        {
+            UIManager.Instance.Initialize();
+            firstRun = false;
+        }
+    }
 
     #endregion
 
