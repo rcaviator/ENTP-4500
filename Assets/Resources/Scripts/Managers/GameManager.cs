@@ -6,6 +6,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
+/// enum for the selected fitness goal
+/// </summary>
+public enum FitnessGoal
+{
+    None, Strength, Endurance, Balance, Flexability
+}
+
+/// <summary>
 /// GameManager is the main managing singlton class for the application
 /// </summary>
 class GameManager
@@ -17,6 +25,9 @@ class GameManager
 
     //start controll
     bool firstRun = true;
+
+    //selected fitness goal
+    //FitnessGoal selectedGoal = FitnessGoal.None;
 
     #endregion
 
@@ -49,11 +60,27 @@ class GameManager
     //other properties can be stored here.
     //example:
 
-    ///// <summary>
-    ///// The accessor for the player
-    ///// </summary>
-    //public PlayerScript Player
-    //{ get; set; }
+    /// <summary>
+    /// Property for the current fitness goal
+    /// </summary>
+    public FitnessGoal SelectedFitnessGoal
+    { get; set; }
+
+
+    public SliderStatScript Strength
+    { get; set; }
+
+
+    public SliderStatScript Endurance
+    { get; set; }
+
+
+    public SliderStatScript Balance
+    { get; set; }
+
+
+    public SliderStatScript Flexibility
+    { get; set; }
 
     #endregion
 
@@ -68,6 +95,35 @@ class GameManager
         {
             UIManager.Instance.Initialize();
             firstRun = false;
+        }
+    }
+
+    /// <summary>
+    /// Returns the current fitness goal enum as a string
+    /// </summary>
+    /// <returns></returns>
+    public string GetCurrentFitnessGoal()
+    {
+        switch (SelectedFitnessGoal)
+        {
+            case FitnessGoal.None:
+                return "None";
+                break;
+            case FitnessGoal.Strength:
+                return "Strength";
+                break;
+            case FitnessGoal.Endurance:
+                return "Endurance";
+                break;
+            case FitnessGoal.Balance:
+                return "Balance";
+                break;
+            case FitnessGoal.Flexability:
+                return "Flexability";
+                break;
+            default:
+                return "Error";
+                break;
         }
     }
 

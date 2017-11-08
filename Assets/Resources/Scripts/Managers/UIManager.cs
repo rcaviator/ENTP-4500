@@ -11,17 +11,21 @@ using UnityEngine.UI;
 public enum UICanvases
 {
     //add all ui canvase GameObject prefab names here
+    //default
+    None,
+
     //main menus
-    MainMenuCanvas, DefineGoalsCanvas, WorkoutBuilderCanvas, ProgressCanvas, DailyPlannerCanvas,
+    HamburgerMenuCanvas, MainMenuCanvas, FitnessGoalsCanvas,
+    WorkoutBuilderCanvas, ProgressCanvas, DailyPlannerCanvas,
 
     //helper uis
-    HelpMeDefineGoalsCanvas,
+    FitnessGoalsHelpCanvas,
 
     //exploration goals
-    CoreExplorationGoalCanvas,
+    StrengthExplorationGoalCanvas,
 
     //exercise explaination uis
-    CrunchExerciseCanvas,
+    PushUpExerciseCanvas,
 }
 
 /// <summary>
@@ -52,12 +56,14 @@ class UIManager
         uiDictPrefabs = new Dictionary<UICanvases, GameObject>()
         {
             //add any new UI canvas prefab names to this list at the end of the string
+            //leave { UICanvases.None, <load> } out
+            { UICanvases.HamburgerMenuCanvas, Resources.Load<GameObject>("Prefabs/UI/HamburgerMenuCanvas") },
             { UICanvases.MainMenuCanvas, Resources.Load<GameObject>("Prefabs/UI/MainMenuCanvas") },
-            { UICanvases.DefineGoalsCanvas, Resources.Load<GameObject>("Prefabs/UI/DefineGoalsCanvas") },
-            { UICanvases.HelpMeDefineGoalsCanvas, Resources.Load<GameObject>("Prefabs/UI/HelpMeDefineGoalsCanvas") },
-            { UICanvases.CoreExplorationGoalCanvas, Resources.Load<GameObject>("Prefabs/UI/CoreExplorationGoalCanvas") },
+            { UICanvases.FitnessGoalsCanvas, Resources.Load<GameObject>("Prefabs/UI/FitnessGoalsCanvas") },
+            { UICanvases.FitnessGoalsHelpCanvas, Resources.Load<GameObject>("Prefabs/UI/HelpFitnessGoalsCanvas") },
+            { UICanvases.StrengthExplorationGoalCanvas, Resources.Load<GameObject>("Prefabs/UI/StrengthExplorationGoalCanvas") },
             { UICanvases.WorkoutBuilderCanvas, Resources.Load<GameObject>("Prefabs/UI/WorkoutBuilderCanvas") },
-            { UICanvases.CrunchExerciseCanvas, Resources.Load<GameObject>("Prefabs/UI/CrunchExerciseCanvas") },
+            { UICanvases.PushUpExerciseCanvas, Resources.Load<GameObject>("Prefabs/UI/PushUpExerciseCanvas") },
             { UICanvases.ProgressCanvas, Resources.Load<GameObject>("Prefabs/UI/ProgressCanvas") },
             { UICanvases.DailyPlannerCanvas, Resources.Load<GameObject>("Prefabs/UI/DailyPlannerCanvas") },
 
@@ -104,6 +110,17 @@ class UIManager
         {
             uiDict[UICanvases.MainMenuCanvas].SetActive(true);
         }
+
+        //set the current fitness goal
+        GameManager.Instance.SelectedFitnessGoal = FitnessGoal.None;
+    }
+
+    /// <summary>
+    /// Enables or disables the hamburger menu canvas
+    /// </summary>
+    public void EnableDisableHamburgerMenu(bool active)
+    {
+        uiDict[UICanvases.HamburgerMenuCanvas].SetActive(active);
     }
 
     /// <summary>
@@ -112,6 +129,13 @@ class UIManager
     /// <param name="newMenu">the new menu to go to</param>
     public void CloseAndChangeUI(UICanvases newMenu)
     {
+        //check if enum is in dictionary
+        if (!uiDict.ContainsKey(newMenu))
+        {
+            Debug.Log(newMenu + " is not in the uiDict dictionary! Aborting menu change.");
+            return;
+        }
+
         //loop through the dictionary and disable all the ui
         foreach (KeyValuePair<UICanvases, GameObject> entry in uiDict)
         {
@@ -119,10 +143,7 @@ class UIManager
         }
 
         //enable the menu to change to
-        if (uiDict.ContainsKey(newMenu))
-        {
-            uiDict[newMenu].SetActive(true);
-        }
+        uiDict[newMenu].SetActive(true);
     }
 
     /// <summary>
