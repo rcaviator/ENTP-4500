@@ -10,10 +10,4 @@ public class InitializerScript : MonoBehaviour
     {
         GameManager.Instance.StartApp();
 	}
-	
-	//// Update is called once per frame
-	//void Update ()
- //   {
-		
-	//}
 }
