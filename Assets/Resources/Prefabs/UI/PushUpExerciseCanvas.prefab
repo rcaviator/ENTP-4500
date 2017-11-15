@@ -610,6 +610,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1782288578076122
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224192206895432126}
+  - component: {fileID: 222444372705384050}
+  - component: {fileID: 114432053402748770}
+  m_Layer: 5
+  m_Name: DiagramPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1842065340249302
 GameObject:
   m_ObjectHideFlags: 1
@@ -1532,6 +1549,33 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114432053402748770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1782288578076122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 3fc09e5c3c476324abc785ed9e23c7e7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114432919469980944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1615,15 +1659,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Push ups:
-
-    -Target muscles
-
-    -Benifits
-
-    -Recomendations
-
-    -Stats applied'
+  m_Text: "Push ups:\nSupport yourself facedown on the ground, with arms extended,
+    hands shoulder-width (or more) apart, and feet touching or slightly apart:\r\nInhale
+    and bend the elbows to bring the rib cage close to the ground without arching
+    the low back excessively. \r\nPush back up to complete arm extension. \r\nExhale
+    at the end of the movement. \r\nThis movement is excellent for the pectoralis
+    major and the triceps brachii. \r\n\r\nVarying the tilt of the chest focuses the
+    work on different parts of the pectorals:\r\nFeet higher isolates the clavicular
+    head of the pectoralis major. \r\nChest higher isolates the inferior part of the
+    pectoralis major. \r\nVarying the width of the hands focuses the work on different
+    parts of the pectorals:\r\nHands wider isolates the lateral part of the pectoralis
+    major. \r\nHands closer together isolates the sternal head of the pectoralis major.\r\n"
 --- !u!114 &114487730566016910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1699,18 +1745,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back to Workout Builder
+  m_Text: Back
 --- !u!114 &114518923234004154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2281,7 +2327,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224081930112154664}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.6025249
+  m_Size: 0.29064402
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2689,6 +2735,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1075916292509474}
+--- !u!222 &222444372705384050
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1782288578076122}
 --- !u!222 &222452792779776974
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -2861,6 +2913,7 @@ RectTransform:
   - {fileID: 224133689997831096}
   - {fileID: 224811879277482304}
   - {fileID: 224511594237731540}
+  - {fileID: 224192206895432126}
   - {fileID: 224085380034847604}
   m_Father: {fileID: 224802836243495362}
   m_RootOrder: 0
@@ -2868,7 +2921,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 1045.6}
+  m_SizeDelta: {x: 0, y: 2167.6}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224081930112154664
 RectTransform:
@@ -2900,12 +2953,12 @@ RectTransform:
   m_Children:
   - {fileID: 224508851513202786}
   m_Father: {fileID: 224060082612331100}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.525818, y: -279.69995}
-  m_SizeDelta: {x: 17.049316, y: -836.9902}
+  m_AnchoredPosition: {x: 8.5142975, y: -885}
+  m_SizeDelta: {x: 17, y: -1923}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224115986242394814
 RectTransform:
@@ -2943,8 +2996,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.476654, y: 214.20001}
-  m_SizeDelta: {x: 17.049316, y: -796.89014}
+  m_AnchoredPosition: {x: 8.4767, y: 804.8}
+  m_SizeDelta: {x: 17, y: -1915.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224143654272185958
 RectTransform:
@@ -2982,6 +3035,24 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 230, y: 0}
   m_SizeDelta: {x: 70, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224192206895432126
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1782288578076122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224060082612331100}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -534}
+  m_SizeDelta: {x: -132.8, y: -1785.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224244243075142946
 RectTransform:
@@ -3209,8 +3280,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5, y: -2.3000002}
-  m_SizeDelta: {x: 453.9, y: 166.2}
+  m_AnchoredPosition: {x: -1.5, y: 4.1000004}
+  m_SizeDelta: {x: 453.9, y: 229.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224511594237731540
 RectTransform:
@@ -3228,8 +3299,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.451996, y: -81.89996}
-  m_SizeDelta: {x: 17.049316, y: -895.59015}
+  m_AnchoredPosition: {x: 8.457153, y: 149.4002}
+  m_SizeDelta: {x: 16.9, y: -1277.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224538244933402474
 RectTransform:
@@ -3246,8 +3317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 4.7525005}
-  m_SizeDelta: {x: 438.1, y: 140.5}
+  m_AnchoredPosition: {x: 0, y: -24.150002}
+  m_SizeDelta: {x: 438.1, y: 938}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224546900354536720
 RectTransform:
@@ -3338,8 +3409,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.464325, y: 437.74994}
-  m_SizeDelta: {x: 17.123318, y: -872.79016}
+  m_AnchoredPosition: {x: 8.464325, y: 1008.1}
+  m_SizeDelta: {x: 17.1, y: -2013.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224659922079735026
 RectTransform:
@@ -3415,7 +3486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 39.899994}
+  m_AnchoredPosition: {x: 0, y: 636}
   m_SizeDelta: {x: 234.2, y: 38.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224861318183586078
@@ -3433,7 +3504,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0013331007, y: -52.549957}
+  m_AnchoredPosition: {x: -0.0023499, y: -46.15}
   m_SizeDelta: {x: 495.98, y: 67.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224861999464500498

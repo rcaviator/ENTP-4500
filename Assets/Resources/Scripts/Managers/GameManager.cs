@@ -10,7 +10,7 @@ using UnityEngine.UI;
 /// </summary>
 public enum FitnessGoal
 {
-    None, Strength, Endurance, Balance, Flexability
+    None, Strength, Endurance, Balance, Flexibility
 }
 
 /// <summary>
@@ -118,8 +118,8 @@ class GameManager
             case FitnessGoal.Balance:
                 return "Balance";
                 break;
-            case FitnessGoal.Flexability:
-                return "Flexability";
+            case FitnessGoal.Flexibility:
+                return "Flexibility";
                 break;
             default:
                 return "Error";
@@ -136,6 +136,11 @@ class GameManager
         //anything that must be updated constantly for GM goes here
         //example:
         //UIManager.Instance.Update();
+
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    //create a stack to keep track of which menus youve been to. android "escape" feature
+        //}
     }
 
     #endregion
