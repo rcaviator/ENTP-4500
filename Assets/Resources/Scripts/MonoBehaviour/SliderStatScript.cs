@@ -62,7 +62,7 @@ public class SliderStatScript : MonoBehaviour
                     case FitnessGoal.Balance:
                         statSlider.value = Constants.STRENGTH_BALANCE_DETERMINED_SLIDER_VALUE;
                         break;
-                    case FitnessGoal.Flexability:
+                    case FitnessGoal.Flexibility:
                         statSlider.value = Constants.STRENGTH_FLEXIBILITY_DETERMINED_SLIDER_VALUE;
                         break;
                     default:
@@ -84,7 +84,7 @@ public class SliderStatScript : MonoBehaviour
                     case FitnessGoal.Balance:
                         statSlider.value = Constants.ENDURANCE_BALANCE_DETERMINED_SLIDER_VALUE;
                         break;
-                    case FitnessGoal.Flexability:
+                    case FitnessGoal.Flexibility:
                         statSlider.value = Constants.ENDURANCE_FLEXIBILITY_DETERMINED_SLIDER_VALUE;
                         break;
                     default:
@@ -106,7 +106,7 @@ public class SliderStatScript : MonoBehaviour
                     case FitnessGoal.Balance:
                         statSlider.value = Constants.BALANCE_BALANCE_DETERMINED_SLIDER_VALUE;
                         break;
-                    case FitnessGoal.Flexability:
+                    case FitnessGoal.Flexibility:
                         statSlider.value = Constants.BALANCE_FLEXIBILITY_DETERMINED_SLIDER_VALUE;
                         break;
                     default:
@@ -128,7 +128,7 @@ public class SliderStatScript : MonoBehaviour
                     case FitnessGoal.Balance:
                         statSlider.value = Constants.FLEXIBILITY_BALANCE_DETERMINED_SLIDER_VALUE;
                         break;
-                    case FitnessGoal.Flexability:
+                    case FitnessGoal.Flexibility:
                         statSlider.value = Constants.FLEXIBILITY_FLEXIBILITY_DETERMINED_SLIDER_VALUE;
                         break;
                     default:
